@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 60420551}
   - component: {fileID: 60420550}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: ui_InputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 308996147}
   - component: {fileID: 308996146}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: ui_EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 369811529}
   - component: {fileID: 369811528}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ui_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 832111246}
   - component: {fileID: 832111245}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ui_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 885600534}
   - component: {fileID: 885600533}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: ui_Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 1497233527}
   - component: {fileID: 1497233526}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ui_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
