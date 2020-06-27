@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class script_InputTest : MonoBehaviour
 {
+    [SerializeField] private Text text_InputTextBox = null;
+    public static float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
 
-    string str_InputStr = "";
+
+    private string str_InputStr = "";
+    private float float_TimePassed = float_BackspaceCooldown + 1f;
+
 
     Dictionary<KeyCode, char> dict_Alphabet = new Dictionary<KeyCode, char>()
                                         {
@@ -41,7 +47,7 @@ public class script_InputTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -52,16 +58,21 @@ public class script_InputTest : MonoBehaviour
             if (Input.GetKeyDown(key))
             {
                 str_InputStr += dict_Alphabet[key];
-                Debug.Log(str_InputStr);
+                text_InputTextBox.text = str_InputStr;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKey(KeyCode.Backspace))
         {
             if (str_InputStr.Length != 0)
             {
-                str_InputStr = str_InputStr.Remove(str_InputStr.Length - 1);
-                Debug.Log(str_InputStr);
+                if (float_TimePassed > float_BackspaceCooldown)
+                {
+                    str_InputStr = str_InputStr.Remove(str_InputStr.Length - 1);
+                    text_InputTextBox.text = str_InputStr;
+                    float_TimePassed = 0;
+                }
             }
         }
+        float_TimePassed += Time.deltaTime;
     }
 }
