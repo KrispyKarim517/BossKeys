@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &415796660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1466,7 +1466,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 12.65
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -1552,7 +1552,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 21.54
+      value: 25.7
       mode: 0
       spread: 0
       speed:
@@ -1611,7 +1611,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.5
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -6098,7 +6098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1761989692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6972,7 +6972,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 12.65
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -7058,7 +7058,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 21.54
+      value: 25.7
       mode: 0
       spread: 0
       speed:
@@ -7117,7 +7117,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.5
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -11872,7 +11872,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.5
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -16706,7 +16706,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.5
       speed:
         serializedVersion: 2
         minMaxState: 0
