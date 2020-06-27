@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class script_InputTest : MonoBehaviour
 {
     [SerializeField] private Text text_InputTextBox = null;
-    public static float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
+    [SerializeField] private float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
 
     public UnityEvent event_ValidKeyPressed = new UnityEvent();
 
     private string str_InputStr = "";
-    private float float_TimePassed = float_BackspaceCooldown + 1f;
+    private float float_TimePassed;
 
 
     Dictionary<KeyCode, char> dict_Alphabet = new Dictionary<KeyCode, char>()
@@ -49,7 +49,7 @@ public class script_InputTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        float_TimePassed = float_BackspaceCooldown + 1f;
     }
 
     // Update is called once per frame
