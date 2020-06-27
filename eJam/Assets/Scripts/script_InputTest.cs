@@ -77,6 +77,12 @@ public class script_InputTest : MonoBehaviour
                 }
             }
         }
+        if (Input.GetKey(KeyCode.Return))
+        {
+            Debug.Log(str_InputStr);
+            str_InputStr = "";
+            text_InputTextBox.text = str_InputStr;
+        }
         float_TimePassed += Time.deltaTime;
     }
 
