@@ -277,8 +277,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1913660076}
   - {fileID: 2019740969}
+  - {fileID: 1913660076}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 385343489}
   - component: {fileID: 385343488}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Input Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,6 +317,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_InputTextBox: {fileID: 1913660077}
+  event_ValidKeyPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074292615}
+        m_MethodName: ValidKeyPressListener
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &385343489
 Transform:
   m_ObjectHideFlags: 0
@@ -444,11 +458,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293313138}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -332}
+  m_AnchoredPosition: {x: 0, y: -194.5}
   m_SizeDelta: {x: 500, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913660077
@@ -521,11 +535,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293313138}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -242}
+  m_AnchoredPosition: {x: 0, y: -104.5}
   m_SizeDelta: {x: 500, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019740970
@@ -555,11 +569,11 @@ MonoBehaviour:
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 0
+    m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: THIS IS A TEST FOR COLOR CHANGING
 --- !u!222 &2019740971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -598,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_CommandTextBox: {fileID: 2019740970}
+  customType_InputText: {fileID: 385343488}
 --- !u!4 &2074292616
 Transform:
   m_ObjectHideFlags: 0

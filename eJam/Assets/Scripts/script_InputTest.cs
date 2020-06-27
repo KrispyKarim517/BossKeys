@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class script_InputTest : MonoBehaviour
@@ -8,6 +9,7 @@ public class script_InputTest : MonoBehaviour
     [SerializeField] private Text text_InputTextBox = null;
     public static float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
 
+    public UnityEvent event_ValidKeyPressed = new UnityEvent();
 
     private string str_InputStr = "";
     private float float_TimePassed = float_BackspaceCooldown + 1f;
@@ -59,6 +61,7 @@ public class script_InputTest : MonoBehaviour
             {
                 str_InputStr += dict_Alphabet[key];
                 text_InputTextBox.text = str_InputStr;
+                event_ValidKeyPressed.Invoke();
             }
         }
         if (Input.GetKey(KeyCode.Backspace))
@@ -70,9 +73,15 @@ public class script_InputTest : MonoBehaviour
                     str_InputStr = str_InputStr.Remove(str_InputStr.Length - 1);
                     text_InputTextBox.text = str_InputStr;
                     float_TimePassed = 0;
+                    event_ValidKeyPressed.Invoke();
                 }
             }
         }
         float_TimePassed += Time.deltaTime;
+    }
+
+    public string GetCurrentInput()
+    {
+        return str_InputStr;
     }
 }
