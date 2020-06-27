@@ -10,8 +10,10 @@ public class script_InputTest : MonoBehaviour
     [SerializeField] private float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
 
     public UnityEvent event_ValidKeyPressed = new UnityEvent();
+    public UnityEvent event_ReturnKeyPressed = new UnityEvent();
 
     private string str_InputStr = "";
+    private string str_FinalInput = "";
     private float float_TimePassed;
 
 
@@ -59,6 +61,7 @@ public class script_InputTest : MonoBehaviour
         {
             if (Input.GetKeyDown(key))
             {
+                str_FinalInput = "";
                 str_InputStr += dict_Alphabet[key];
                 text_InputTextBox.text = str_InputStr;
                 event_ValidKeyPressed.Invoke();
@@ -70,6 +73,7 @@ public class script_InputTest : MonoBehaviour
             {
                 if (float_TimePassed > float_BackspaceCooldown)
                 {
+                    str_FinalInput = "";
                     str_InputStr = str_InputStr.Remove(str_InputStr.Length - 1);
                     text_InputTextBox.text = str_InputStr;
                     float_TimePassed = 0;
@@ -79,7 +83,9 @@ public class script_InputTest : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Return))
         {
-            Debug.Log(str_InputStr);
+            //Debug.Log(str_InputStr);
+            str_FinalInput = str_InputStr;
+            event_ReturnKeyPressed.Invoke();
             str_InputStr = "";
             text_InputTextBox.text = str_InputStr;
         }
@@ -89,5 +95,10 @@ public class script_InputTest : MonoBehaviour
     public string GetCurrentInput()
     {
         return str_InputStr;
+    }
+
+    public string GetFinalInput()
+    {
+        return str_FinalInput;
     }
 }

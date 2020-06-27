@@ -317,11 +317,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_InputTextBox: {fileID: 1913660077}
+  float_BackspaceCooldown: 0.1
   event_ValidKeyPressed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2074292615}
         m_MethodName: ValidKeyPressListener
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  event_ReturnKeyPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074292615}
+        m_MethodName: ReturnKeyPressLister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -593,7 +608,7 @@ GameObject:
   - component: {fileID: 2074292616}
   - component: {fileID: 2074292615}
   m_Layer: 0
-  m_Name: Matcher
+  m_Name: Matcher Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
