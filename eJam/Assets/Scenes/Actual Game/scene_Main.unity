@@ -2997,14 +2997,14 @@ MonoBehaviour:
   text_CommandTextBox: {fileID: 2131434491}
   gobj_InputText: {fileID: 1926180390}
   float_IncorrectInputDelay: 0.25
-  event_COOK:
+  event_SEASON:
     m_PersistentCalls:
       m_Calls: []
   event_GET:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1571928184}
-        m_MethodName: CorrectMoveMatchListener
+        m_MethodName: CorrectGetMatchListener
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
