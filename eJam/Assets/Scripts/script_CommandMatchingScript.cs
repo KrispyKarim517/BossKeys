@@ -38,7 +38,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetNewCommand("GET CHICKEN");
+        SetNewCommand("GET STEAK");
         wait_IncorrectInputPause = new WaitForSeconds(float_IncorrectInputDelay);
     }
 
