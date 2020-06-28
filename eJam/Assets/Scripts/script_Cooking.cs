@@ -88,7 +88,7 @@ public class script_Cooking : MonoBehaviour
         ref_FoodScript.SetCookingStatus();
         
         // Calls the function "StartCooking" every float_TimeStep second(s)
-        // The function won't get called every frame, but it will simulate the effect of 
+        // The function won't get called every frame, but this will simulate the effect of 
         // calling Update. 
         ref_FoodScript.InvokeRepeating("StartCooking", 0, float_TimeStep);
     }
