@@ -52,9 +52,10 @@ public class script_Movement : MonoBehaviour
             }
             return;
         }
+        bool_CanMove = true;
         if (bool_CanMove)
         {
-            //gobj_Target.GetComponent<Renderer>().enabled = false;
+            gobj_Target.GetComponent<Renderer>().enabled = false;
             gobj_SteakBubble.SetActive(true);
             anim_Condition.SetInteger("int_AnimCondition", 2);
             this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
@@ -67,10 +68,6 @@ public class script_Movement : MonoBehaviour
                 bool_CanMove = false;
             }
         }
-        else
-        {
-            
-        }
     }
 
     void GetChicken()
@@ -82,9 +79,12 @@ public class script_Movement : MonoBehaviour
             if (float_DistanceY >= -1.6f)
             {
                 bool_chickenComplete = true;
+                customType_Sequencer.PushCommand("MOVE TO GRILL");
+                customType_Sequencer.ReadyCommand();
             }
             return;
         }
+        bool_CanMove = true;
         if (bool_CanMove)
         {
             //gobj_Target.GetComponent<Renderer>().enabled = false;
@@ -94,6 +94,9 @@ public class script_Movement : MonoBehaviour
             if (this.transform.position.y == 0)
             {
                 anim_Condition.SetInteger("int_AnimCondition", -4);
+                customType_Sequencer.PushCommand("GRILL CHICKEN");
+                customType_Sequencer.ReadyCommand();
+                customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
             }
         }
     }
