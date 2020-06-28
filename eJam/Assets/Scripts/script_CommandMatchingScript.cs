@@ -31,7 +31,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     private string str_CommandToMatch;
 
     [Header("Delay after Incorrect Input")]
-    [SerializeField] private float float_IncorrectInputDelay;
+    [SerializeField] private float float_IncorrectInputDelay = 0f;
     private static WaitForSeconds wait_IncorrectInputPause;
 
     // Start is called before the first frame update
