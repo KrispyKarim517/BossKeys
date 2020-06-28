@@ -3,20 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
+
+
+[System.Serializable]
+public class CommandEvent : UnityEvent<string>
+{
+}
+
 
 public class script_CommandMatchingScript : MonoBehaviour
 {
+    [Header("Command Sequencer")]
+    [SerializeField] private script_CommandSequencer gobj_commandSequencer = null;
+
+    [Header("Command Text Box")]
     [SerializeField] private Text text_CommandTextBox = null;
-    [SerializeField] private script_InputTest customType_InputText = null;
+
+    [Header("Object with InputText Script")]
+    [SerializeField] private script_InputText gobj_InputText = null;
+
+    [Header("Command Listeners")]
+    public CommandEvent event_COOK = new CommandEvent();
+    public CommandEvent event_MOVE = new CommandEvent();
+    public CommandEvent event_BONUS = new CommandEvent();
 
     private string str_CommandToMatch;
 
-
+    [Header("Delay after Incorrect Input")]
+    [SerializeField] private float float_IncorrectInputDelay;
+    private static WaitForSeconds wait_IncorrectInputPause;
 
     // Start is called before the first frame update
     void Start()
     {
         SetNewCommand("MOVE COMMAND NUMBER ONE");
+        wait_IncorrectInputPause = new WaitForSeconds(float_IncorrectInputDelay);
     }
 
     // Update is called once per frame
@@ -56,12 +78,12 @@ public class script_CommandMatchingScript : MonoBehaviour
 
     public void ValidKeyPressListener()
     {
-        ChangeTextColors(customType_InputText.GetCurrentInput());
+        ChangeTextColors(gobj_InputText.GetCurrentInput());
     }
 
     public void ReturnKeyPressLister()
     {
-        string str_temp_final_input = customType_InputText.GetFinalInput();
+        string str_temp_final_input = gobj_InputText.GetFinalInput();
         
         if (str_temp_final_input == str_CommandToMatch)
         {
@@ -69,28 +91,45 @@ public class script_CommandMatchingScript : MonoBehaviour
             {
                 case "MOVE":
                     Debug.Log("Successful MOVE match");
+                    event_COOK.Invoke(str_temp_final_input);
                     break;
                 case "COOK":
                     Debug.Log("Successful COOK match");
+                    event_COOK.Invoke(str_temp_final_input);
                     break;
                 default:
-                    Time.timeScale = 0;
-                    Debug.Log("BAD MATCH!!! SHOULD NEVER PRINT!!!!");
+                    Debug.Log("Successful BONUS match");
+                    event_BONUS.Invoke(str_temp_final_input);
                     break;
             }
-            SetNewCommand("COOK COMMAND NUMBER TWO");
+            SetNewCommand(gobj_commandSequencer.GetNextCommand());
         }
         else
         {
-            InvalidMatch();
+            InvalidMatch(str_temp_final_input);
         }
 
     }
 
-    private void InvalidMatch()
+    private void InvalidMatch(string str_input)
     {
-
+        text_CommandTextBox.text = ChangeTextColor(str_input, "red");
+        gobj_InputText.PauseInput();
+        StartCoroutine(IncorrectInput());
     }
+
+    private IEnumerator IncorrectInput()
+    {
+        while (true)
+        {
+            yield return wait_IncorrectInputPause;
+                SetNewCommand(str_CommandToMatch);
+                gobj_InputText.ResumeInput();
+            break;
+        }
+    }
+
+
 
     private string GenGoodCharacter(char char_next_char)
     {
@@ -101,4 +140,10 @@ public class script_CommandMatchingScript : MonoBehaviour
     {
         return "<color=red>" + char_next_char + "</color>";
     }
+
+    private string ChangeTextColor(string str_old_str, string str_color)
+    {
+        return "<color=" + str_color + ">" + str_old_str + "</color>";
+    }
+
 }
