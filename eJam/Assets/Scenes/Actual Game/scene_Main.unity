@@ -434,6 +434,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1337748410}
     m_Modifications:
+    - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1210076077948989835, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2658,6 +2663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740073492035810022, guid: b1fbb7db93830734fa2f7df1efaf158f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fbb7db93830734fa2f7df1efaf158f, type: 3}
