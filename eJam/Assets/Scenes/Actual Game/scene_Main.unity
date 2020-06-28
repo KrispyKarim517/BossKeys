@@ -599,7 +599,12 @@ PrefabInstance:
     - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1210076077948989835, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
@@ -3733,7 +3738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2131434489
 PrefabInstance:
@@ -3855,7 +3860,12 @@ PrefabInstance:
     - target: {fileID: 7740073492035810022, guid: b1fbb7db93830734fa2f7df1efaf158f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740073492035810022, guid: b1fbb7db93830734fa2f7df1efaf158f,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fbb7db93830734fa2f7df1efaf158f, type: 3}
