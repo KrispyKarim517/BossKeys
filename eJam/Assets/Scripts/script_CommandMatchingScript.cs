@@ -23,16 +23,16 @@ public class script_CommandMatchingScript : MonoBehaviour
     [Header("Object with InputText Script")]
     [SerializeField] private script_InputText gobj_InputText = null;
 
+    [Header("Delay after Incorrect Input")]
+    [SerializeField] private float float_IncorrectInputDelay = 0f;
+    private static WaitForSeconds wait_IncorrectInputPause;
+
     [Header("Command Listeners")]
     public CommandEvent event_COOK = new CommandEvent();
     public CommandEvent event_MOVE = new CommandEvent();
     public CommandEvent event_BONUS = new CommandEvent();
 
     private string str_CommandToMatch;
-
-    [Header("Delay after Incorrect Input")]
-    [SerializeField] private float float_IncorrectInputDelay = 0f;
-    private static WaitForSeconds wait_IncorrectInputPause;
 
     // Start is called before the first frame update
     void Start()
