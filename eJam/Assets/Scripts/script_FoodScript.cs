@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/*
+    ORIGINAL AUTHOR: RYAN GREEN
+    EDITED BY: Nichole Wong
+    ---------------------------------------------
+    LAST UPDATED: 6/28 @ 9:05AM (Nichole)
+        - Added sprite variables to include the no-plate raw sprites
+        - Added function SetCookingStatus()
+        - Added function StartCooking()
+        - Added dependency: script_Cooking.cs
+        - Added component requirement: SpriteRenderer
+*/
+
+[RequireComponent(typeof(SpriteRenderer))]
 public class script_FoodScript : MonoBehaviour
 {
     public float float_TimeTilCooked;
     public float float_TimeTilBurnt;
 
-    public Sprite sprite_cooked, sprite_burnt;
+    public Sprite sprite_raw, sprite_cooked, sprite_burnt;
 
     [NonSerialized]
     public bool bool_raw, bool_cooked, bool_burnt;
@@ -27,9 +40,10 @@ public class script_FoodScript : MonoBehaviour
         float_activeTime = float_TimeTilCooked;
 
         m_SpriteRenderer = this.GetComponent<SpriteRenderer>();
+        m_SpriteRenderer.sprite = sprite_raw;
     }
 
-    void Update()
+    /*void Update()
     {
         if(!bool_burnt)
         {
@@ -46,6 +60,45 @@ public class script_FoodScript : MonoBehaviour
                 }
             }
         }
+    }*/
+    
+    /*
+        INPUT: None
+        OUTPUT: None
+        PURPOSE: Updates the values of private variables float_active & float_activeTime
+    */
+    public void SetCookingStatus()
+    {
+        float_activeTime = float_TimeTilCooked;
+        m_SpriteRenderer.sprite = sprite_raw;
+    }
+
+    /*
+        INPUT: None
+        OUTPUT: None 
+        PURPOSE: Starts the grilling cycle
+        
+        Instead of calling Update(), I thought it'd be better to have StartCooking be 
+        a separate function so that it's easier to trigger (unless there is a method for 
+        triggering Update).
+    */
+    public void StartCooking()
+    {
+        if (!bool_burnt)
+        {
+            float_timer += Time.deltaTime;
+            if (float_timer >= float_activeTime)
+            {
+                    if (bool_raw)
+                    {
+                            RawToCooked();
+                    }
+                    else if (bool_cooked)
+                    {
+                           CookedToBurnt();
+                    }
+                }
+        }
     }
 
     private void RawToCooked()
@@ -55,6 +108,7 @@ public class script_FoodScript : MonoBehaviour
         float_timer = 0;
         float_activeTime = float_TimeTilBurnt;
         m_SpriteRenderer.sprite = sprite_cooked;
+        Debug.Log("Steak is cooked");
     }
 
     private void CookedToBurnt()
@@ -62,6 +116,7 @@ public class script_FoodScript : MonoBehaviour
         bool_cooked = false;
         bool_burnt = true;
         m_SpriteRenderer.sprite = sprite_burnt;
+        Debug.Log("Steak is burnt");
     }
 
     public bool isRaw()
