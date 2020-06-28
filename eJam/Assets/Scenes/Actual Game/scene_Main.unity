@@ -1227,10 +1227,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 796188281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80211441d33df54f88594b1d084336c, type: 3}
+  m_Script: {fileID: 11500000, guid: 16d0bf8f351b26249a0996f11fab8d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text_displaytimer: {fileID: 974147895}
+  text_UIText: {fileID: 974147895}
 --- !u!4 &796188283
 Transform:
   m_ObjectHideFlags: 0
@@ -2548,6 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2a20e7770299c46b8ad88bd99f376b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customType_Matcher: {fileID: 1604140191}
 --- !u!4 &1514056445
 Transform:
   m_ObjectHideFlags: 0
@@ -2830,6 +2831,7 @@ MonoBehaviour:
   gobj_Home: {fileID: 715023704}
   anim_Condition: {fileID: 1571928185}
   float_Speed: 2.5
+  customType_Sequencer: {fileID: 1514056444}
 --- !u!95 &1571928185
 Animator:
   serializedVersion: 3
@@ -2899,6 +2901,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  event_GRILL:
+    m_PersistentCalls:
+      m_Calls: []
   event_BONUS:
     m_PersistentCalls:
       m_Calls: []

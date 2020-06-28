@@ -30,6 +30,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     [Header("Command Listeners")]
     public CommandEvent event_COOK = new CommandEvent();
     public CommandEvent event_MOVE = new CommandEvent();
+    public CommandEvent event_GRILL = new CommandEvent();
     public CommandEvent event_BONUS = new CommandEvent();
 
     private string str_CommandToMatch;
@@ -97,12 +98,18 @@ public class script_CommandMatchingScript : MonoBehaviour
                     Debug.Log("Successful COOK match");
                     event_COOK.Invoke(str_temp_final_input);
                     break;
+                case "GRILL":
+                    Debug.Log("Successful GRILL match");
+                    event_GRILL.Invoke(str_temp_final_input);
+                    gobj_commandSequencer.ReadyCommand();
+                    break;
                 default:
                     Debug.Log("Successful BONUS match");
                     event_BONUS.Invoke(str_temp_final_input);
+                    gobj_commandSequencer.ReadyCommand();
                     break;
             }
-            SetNewCommand(gobj_commandSequencer.GetNextCommand());
+            //SetNewCommand(gobj_commandSequencer.GetNextCommand());
         }
         else
         {

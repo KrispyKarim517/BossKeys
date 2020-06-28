@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class script_CommandSequencer : MonoBehaviour
 {
+    [Header("Matching Object")]
+    public script_CommandMatchingScript customType_Matcher = null;
+
+
     private List<string> list_AllJokes = new List<string>()
                                         {
                                             "STEAK PUNS ARE PRETTY RARE",
@@ -19,16 +23,11 @@ public class script_CommandSequencer : MonoBehaviour
 
     private Queue<string> queue_Commands = new Queue<string>();
     
-    //private char char_CommandCounter = 'A';
     private System.Random random_RandomIndexGenerator = new System.Random();
 
     // Start is called before the first frame update
     void Start()
     {
-        //while (char_CommandCounter != 'Z')
-        //   PushCommand(string.Format("COMMAND {0}", char_CommandCounter++));
-
-        queue_Commands.Enqueue("MOVE TO CHICKEN");
         list_OnlyNewJokes =  list_AllJokes.ToList();
     }
 
@@ -40,6 +39,7 @@ public class script_CommandSequencer : MonoBehaviour
 
     public string GetNextCommand()
     {
+
         if (queue_Commands.Count != 0)
             return queue_Commands.Dequeue();
         else
@@ -48,12 +48,17 @@ public class script_CommandSequencer : MonoBehaviour
         }
     }
 
+    public void ReadyCommand()
+    {
+        customType_Matcher.SetNewCommand(GetNextCommand());
+    }
+
     public void PushCommand(string str_new_command)
     {
         queue_Commands.Enqueue(str_new_command);
     }
 
-    private string GenerateJoke()
+    public string GenerateJoke()
     {
         if (list_OnlyNewJokes.Count == 0)
             list_OnlyNewJokes = list_AllJokes.ToList();
