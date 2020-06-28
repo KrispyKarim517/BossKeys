@@ -11,7 +11,7 @@ public class script_CountdownTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float_timer = 10;
+        float_timer = 0;
         text_displaytimer.text = float_timer.ToString();
     }
 
@@ -19,15 +19,9 @@ public class script_CountdownTimer : MonoBehaviour
     void Update()
     {
         float_backgroundtimer += Time.deltaTime;
-        if (float_timer == 0)
+        if (float_backgroundtimer >= 1)
         {
-            float_timer = 10;
-            text_displaytimer.text = float_timer.ToString();
-            float_backgroundtimer = 0;
-        }
-        else if (float_backgroundtimer >= 1)
-        {
-            float_timer -= 1;
+            float_timer += 1;
             text_displaytimer.text = float_timer.ToString();
             float_backgroundtimer = 0;
         }
