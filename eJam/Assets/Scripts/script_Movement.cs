@@ -34,11 +34,12 @@ public class script_Movement : MonoBehaviour
 
     void GetSteak()
     {
-        if ((bool_steakComplete == false) && (float_DistanceX > 1.5f))
+        print(float_DistanceX);
+        if ((bool_steakComplete == false) && (float_DistanceX < -1.5f))
         {
             anim_Condition.SetInteger("int_AnimCondition", 3);
-            this.transform.position = new Vector2(this.transform.position.x - .01f, this.transform.position.y);
-            if (float_DistanceX <= 1.6f)
+            this.transform.position = new Vector2(this.transform.position.x + .05f, this.transform.position.y);
+            if (float_DistanceX >= .4f)
             {
                 bool_steakComplete = true;
             }
@@ -55,11 +56,11 @@ public class script_Movement : MonoBehaviour
 
     void GetChicken()
     {
-        if ((bool_chickenComplete == false) && (float_DistanceY > 1.5f))
+        if ((bool_chickenComplete == false) && (float_DistanceY < 1.5f))
         {
             anim_Condition.SetInteger("int_AnimCondition", 1);
-            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - .01f);
-            if (float_DistanceY <= 1.6f)
+            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + .01f);
+            if (float_DistanceY >= 1.6f)
             {
                 bool_chickenComplete = true;
             }
