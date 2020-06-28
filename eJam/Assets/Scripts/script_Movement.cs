@@ -27,14 +27,12 @@ public class script_Movement : MonoBehaviour
     
     private bool bool_steakComplete;
     private bool bool_chickenComplete;
-    private bool bool_CanMove;
 
     // Start is called before the first frame update
     void Start()
     {
         bool_steakComplete = false;
         bool_chickenComplete = false;
-        bool_CanMove = false;
         gobj_Target = gobj_Home;
     }
 
@@ -47,27 +45,21 @@ public class script_Movement : MonoBehaviour
             if (float_DistanceX >= -1.6f)
             {
                 bool_steakComplete = true;
-                customType_Sequencer.PushCommand("MOVE TO GRILL");
-                customType_Sequencer.ReadyCommand();
             }
             return;
         }
-        bool_CanMove = true;
-        if (bool_CanMove)
+        gobj_SteakBubble.SetActive(true);
+        anim_Condition.SetInteger("int_AnimCondition", 2);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
+        if (this.transform.position.x == 0)
         {
-            gobj_Target.GetComponent<Renderer>().enabled = false;
-            gobj_SteakBubble.SetActive(true);
-            anim_Condition.SetInteger("int_AnimCondition", 2);
-            this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
-            if (this.transform.position.x == 0)
-            {
-                anim_Condition.SetInteger("int_AnimCondition", -2);
-                customType_Sequencer.PushCommand("GRILL STEAK");
-                customType_Sequencer.ReadyCommand();
-                customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
-                bool_CanMove = false;
-            }
+            anim_Condition.SetInteger("int_AnimCondition", -2);
+            customType_Sequencer.PushCommand("GRILL STEAK");
+            customType_Sequencer.ReadyCommand();
+            customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
+            gobj_Target = gobj_Home;
         }
+      
     }
 
     void GetChicken()
@@ -79,26 +71,21 @@ public class script_Movement : MonoBehaviour
             if (float_DistanceY >= -1.6f)
             {
                 bool_chickenComplete = true;
-                customType_Sequencer.PushCommand("MOVE TO GRILL");
-                customType_Sequencer.ReadyCommand();
             }
             return;
         }
-        bool_CanMove = true;
-        if (bool_CanMove)
+        gobj_ChickenBubble.SetActive(true);
+        anim_Condition.SetInteger("int_AnimCondition", 4);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
+        if (this.transform.position.y == 0)
         {
-            //gobj_Target.GetComponent<Renderer>().enabled = false;
-            gobj_ChickenBubble.SetActive(true);
-            anim_Condition.SetInteger("int_AnimCondition", 4);
-            this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
-            if (this.transform.position.y == 0)
-            {
-                anim_Condition.SetInteger("int_AnimCondition", -4);
-                customType_Sequencer.PushCommand("GRILL CHICKEN");
-                customType_Sequencer.ReadyCommand();
-                customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
-            }
+            anim_Condition.SetInteger("int_AnimCondition", -4);
+            customType_Sequencer.PushCommand("GRILL CHICKEN");
+            customType_Sequencer.ReadyCommand();
+            customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
+            gobj_Target = gobj_Home;
         }
+        
     }
 
     private void Move()
@@ -130,9 +117,6 @@ public class script_Movement : MonoBehaviour
                 break;
             case "CHICKEN":
                 gobj_Target = gobj_Chicken;
-                break;
-            case "GRILL":
-                bool_CanMove = true;
                 break;
         }
 
