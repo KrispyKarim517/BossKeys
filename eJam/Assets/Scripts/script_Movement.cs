@@ -7,15 +7,17 @@ public class script_Movement : MonoBehaviour
 {
     [Header("Targets")]
     public GameObject gobj_Steak;
+    public GameObject gobj_SteakBubble;
     public GameObject gobj_Chicken;
+    public GameObject gobj_ChickenBubble;
     public GameObject gobj_Home;
     private GameObject gobj_Target;
 
     [Header("Animator")]
     public Animator anim_Condition;
     
-    [Header("Movement Soeed")]
-    public float float_Speed = 200f;
+    [Header("Movement Speed")]
+    public float float_Speed;
     
     
     
@@ -34,10 +36,9 @@ public class script_Movement : MonoBehaviour
 
     void GetSteak()
     {
-        print(float_DistanceX);
         if ((bool_steakComplete == false) && (float_DistanceX < -1.5f))
         {
-            anim_Condition.SetInteger("int_AnimCondition", 3);
+            anim_Condition.SetInteger("int_AnimCondition", 1);
             this.transform.position = new Vector2(this.transform.position.x + .05f, this.transform.position.y);
             if (float_DistanceX >= -1.6f)
             {
@@ -46,32 +47,34 @@ public class script_Movement : MonoBehaviour
             return;
         }
         gobj_Target.GetComponent<Renderer>().enabled = false;
-        anim_Condition.SetInteger("int_AnimCondition", 4);
+        gobj_SteakBubble.SetActive(true);
+        anim_Condition.SetInteger("int_AnimCondition", 2);
         this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
         if (this.transform.position.x == 0)
         {
-            anim_Condition.SetInteger("int_AnimCondition", -4);
+            anim_Condition.SetInteger("int_AnimCondition", -2);
         }
     }
 
     void GetChicken()
     {
-        if ((bool_chickenComplete == false) && (float_DistanceY < 1.5f))
+        if ((bool_chickenComplete == false) && (float_DistanceY < -1.5f))
         {
-            anim_Condition.SetInteger("int_AnimCondition", 1);
-            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + .01f);
-            if (float_DistanceY >= 1.6f)
+            anim_Condition.SetInteger("int_AnimCondition", 3);
+            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + .05f);
+            if (float_DistanceY >= -1.6f)
             {
                 bool_chickenComplete = true;
             }
             return;
         }
         gobj_Target.GetComponent<Renderer>().enabled = false;
-        anim_Condition.SetInteger("int_AnimCondition", 2);
+        gobj_ChickenBubble.SetActive(true);
+        anim_Condition.SetInteger("int_AnimCondition", 4);
         this.transform.position = Vector2.MoveTowards(this.transform.position, gobj_Home.transform.position, float_Speed * Time.fixedDeltaTime);
         if (this.transform.position.y == 0)
         {
-            anim_Condition.SetInteger("int_AnimCondition", -2);
+            anim_Condition.SetInteger("int_AnimCondition", -4);
         }
     }
 
