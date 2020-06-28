@@ -2962,7 +2962,7 @@ MonoBehaviour:
   float_SteakCookTime: 1
   float_SteakBurnTime: 1
   float_ChickenCookTime: 0.5
-  float_ChickenBurnTime: 0.2
+  float_ChickenBurnTime: 0.3
   float_TimeStep: 0.1
 --- !u!1 &1604140190
 GameObject:
@@ -3673,6 +3673,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   float_TimeTilCooked: 0
   float_TimeTilBurnt: 0
+  event_CookedFoodEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  event_BurntFoodEvent:
+    m_PersistentCalls:
+      m_Calls: []
   sprite_raw: {fileID: 0}
   sprite_cooked: {fileID: 0}
   sprite_burnt: {fileID: 0}
