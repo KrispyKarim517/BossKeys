@@ -733,6 +733,36 @@ Transform:
   m_Father: {fileID: 1234998865}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -160.83301}
+--- !u!1 &715023704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715023705}
+  m_Layer: 0
+  m_Name: Home Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &715023705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715023704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796188281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2097,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1571928183}
   - component: {fileID: 1571928182}
+  - component: {fileID: 1571928185}
+  - component: {fileID: 1571928184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2139,6 +2171,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571928184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571928181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c843f4e8ca2ad1946a8fa3b33dedc28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gobj_Steak: {fileID: 629267617}
+  gobj_Chicken: {fileID: 2066649587}
+  gobj_Home: {fileID: 715023704}
+  anim_Condition: {fileID: 1571928185}
+  float_Speed: 1
+--- !u!95 &1571928185
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571928181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ebf11d1f970fdbd408fec2bf5fe76911, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1604140190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,13 +2239,24 @@ MonoBehaviour:
   gobj_commandSequencer: {fileID: 1514056444}
   text_CommandTextBox: {fileID: 2131434491}
   gobj_InputText: {fileID: 1926180390}
-  float_IncorrectInputDelay: 3
+  float_IncorrectInputDelay: 0.25
   event_COOK:
     m_PersistentCalls:
       m_Calls: []
   event_MOVE:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571928184}
+        m_MethodName: CorrectMoveMatchListener
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   event_BONUS:
     m_PersistentCalls:
       m_Calls: []
