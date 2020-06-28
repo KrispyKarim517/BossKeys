@@ -37,7 +37,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetNewCommand("MOVE COMMAND NUMBER ONE");
+        SetNewCommand("MOVE TO STEAK");
         wait_IncorrectInputPause = new WaitForSeconds(float_IncorrectInputDelay);
     }
 
@@ -91,7 +91,7 @@ public class script_CommandMatchingScript : MonoBehaviour
             {
                 case "MOVE":
                     Debug.Log("Successful MOVE match");
-                    event_COOK.Invoke(str_temp_final_input);
+                    event_MOVE.Invoke(str_temp_final_input);
                     break;
                 case "COOK":
                     Debug.Log("Successful COOK match");

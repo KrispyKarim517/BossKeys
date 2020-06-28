@@ -28,6 +28,7 @@ public class script_CommandSequencer : MonoBehaviour
         //while (char_CommandCounter != 'Z')
         //   PushCommand(string.Format("COMMAND {0}", char_CommandCounter++));
 
+        queue_Commands.Enqueue("MOVE TO CHICKEN");
         list_OnlyNewJokes =  list_AllJokes.ToList();
     }
 

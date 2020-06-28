@@ -1,13 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class script_Movement : MonoBehaviour
 {
-    public GameObject gobj_Target;
+    [Header("Targets")]
+    public GameObject gobj_Steak;
+    public GameObject gobj_Chicken;
     public GameObject gobj_Home;
+    private GameObject gobj_Target;
+
+    [Header("Animator")]
     public Animator anim_Condition;
+    
+    [Header("Movement Soeed")]
     public float float_Speed;
+    
+    
+    
     private float float_DistanceX;
     private float float_DistanceY;
     private bool bool_steakComplete;
@@ -18,6 +29,7 @@ public class script_Movement : MonoBehaviour
     {
         bool_steakComplete = false;
         bool_chickenComplete = false;
+        gobj_Target = gobj_Home;
     }
 
     void GetSteak()
@@ -62,11 +74,37 @@ public class script_Movement : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        if (gobj_Target == gobj_Steak)
+            GetSteak();
+        else if (gobj_Target == gobj_Chicken)
+            GetChicken();
+    }
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
         float_DistanceX = this.transform.position.x - gobj_Target.transform.position.x;
         float_DistanceY = this.transform.position.y - gobj_Target.transform.position.y;
-        GetSteak();
+        Move();
+    }
+
+    public void CorrectMoveMatchListener(string str_command)
+    {
+        string str_target = str_command.Split().Last();
+        Debug.Log(str_command);
+        Debug.Log(str_target);
+        switch (str_target)
+        {
+            case "STEAK":
+                gobj_Target = gobj_Steak;
+                break;
+            case "CHICKEN":
+                gobj_Target = gobj_Chicken;
+                break;
+        }
+
     }
 }
