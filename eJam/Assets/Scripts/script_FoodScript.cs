@@ -31,7 +31,7 @@ public class script_FoodScript : MonoBehaviour
     public Sprite sprite_raw, sprite_cooked, sprite_burnt;
 
     [NonSerialized]
-    public bool bool_raw, bool_cooked, bool_burnt;
+    public bool bool_raw, bool_cooked, bool_burnt, bool_cooking;
 
     private float float_timer;
     private float float_activeTime;
@@ -42,7 +42,7 @@ public class script_FoodScript : MonoBehaviour
     void Start()
     {
         bool_raw = true;
-        bool_cooked = bool_burnt = false;
+        bool_cooked = bool_burnt = bool_cooking = false;
 
         float_timer = 0;
         float_activeTime = float_TimeTilCooked;
@@ -51,24 +51,27 @@ public class script_FoodScript : MonoBehaviour
         m_SpriteRenderer.sprite = sprite_raw;
     }
 
-    /*void Update()
+    void Update()
     {
-        if(!bool_burnt)
+        if(bool_cooking)
         {
-            float_timer += Time.deltaTime;
-            if(float_timer >= float_activeTime)
+            if(!bool_burnt)
             {
-                if(bool_raw)
+                float_timer += Time.deltaTime;
+                if(float_timer >= float_activeTime)
                 {
-                    RawToCooked();
-                }
-                else if(bool_cooked)
-                {
-                    CookedToBurnt();
+                    if(bool_raw)
+                    {
+                        RawToCooked();
+                    }
+                    else if(bool_cooked)
+                    {
+                        CookedToBurnt();
+                    }
                 }
             }
         }
-    }*/
+    }
     
     /*
         INPUT: None
@@ -92,21 +95,7 @@ public class script_FoodScript : MonoBehaviour
     */
     public void StartCooking()
     {
-        if (!bool_burnt)
-        {
-            float_timer += Time.deltaTime;
-            if (float_timer >= float_activeTime)
-            {
-                    if (bool_raw)
-                    {
-                            RawToCooked();
-                    }
-                    else if (bool_cooked)
-                    {
-                           CookedToBurnt();
-                    }
-                }
-        }
+        bool_cooking = true;
     }
 
     private void RawToCooked()
