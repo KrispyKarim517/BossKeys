@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class script_TimerScript : MonoBehaviour
 {
+    [Header("Timer Text Box")]
     public Text text_UIText;
 
     private float float_timer;
