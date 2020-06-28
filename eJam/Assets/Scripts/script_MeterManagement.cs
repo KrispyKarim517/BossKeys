@@ -28,4 +28,9 @@ public class script_MeterManagement : MonoBehaviour
             float_timer = 0;
         }
     }
+
+    public void gain_Meter(string bonus)
+    {
+
+    }
 }
