@@ -15,7 +15,7 @@ public class script_Movement : MonoBehaviour
     public Animator anim_Condition;
     
     [Header("Movement Soeed")]
-    public float float_Speed;
+    public float float_Speed = 200f;
     
     
     
@@ -39,7 +39,7 @@ public class script_Movement : MonoBehaviour
         {
             anim_Condition.SetInteger("int_AnimCondition", 3);
             this.transform.position = new Vector2(this.transform.position.x + .05f, this.transform.position.y);
-            if (float_DistanceX >= .4f)
+            if (float_DistanceX >= -1.6f)
             {
                 bool_steakComplete = true;
             }
