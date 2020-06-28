@@ -32,7 +32,17 @@ public class script_TimerScript : MonoBehaviour
     {
         bool_counting = true;
     }
+    public void StartTimer(string s)
+    {
+        bool_counting = true;
+    }
     public void EndTimer()
+    {
+        float_timer = 0;
+        bool_counting = false;
+        text_UIText.text = "0";
+    }
+    public void EndTimer(string s)
     {
         float_timer = 0;
         bool_counting = false;
