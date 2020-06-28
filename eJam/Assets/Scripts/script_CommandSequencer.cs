@@ -13,11 +13,11 @@ public class script_CommandSequencer : MonoBehaviour
     private List<string> list_AllJokes = new List<string>()
                                         {
                                             "STEAK PUNS ARE PRETTY RARE",
-                                            "INSULTING MY NOODLES IS PRETTY LO MEIN",
+                                            //"INSULTING MY NOODLES IS PRETTY LO MEIN",
                                             "THE RIGHT SAUCE IS TERIYA KEY", //Does this one make sense?
                                             "I FRIED THIS RICE NOT THE SHRIMP",
                                             "CHICKEN DOESNT NEED SEASONING",
-                                            "THIS CHICKEN CROSSED THE WRONG ROAD",
+                                            //"THIS CHICKEN CROSSED THE WRONG ROAD",
                                         };
     private List<string> list_OnlyNewJokes;
 

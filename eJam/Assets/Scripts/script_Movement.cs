@@ -36,6 +36,16 @@ public class script_Movement : MonoBehaviour
         gobj_Target = gobj_Home;
     }
 
+    public void DisableSteakBubble(string _)
+    {
+        gobj_SteakBubble.SetActive(false);
+    }
+
+    public void DisableChickenBubble(string _)
+    {
+        gobj_ChickenBubble.SetActive(false);
+    }
+
     void GetSteak()
     {
         if ((bool_steakComplete == false) && (float_DistanceX < -1.5f))
@@ -60,7 +70,6 @@ public class script_Movement : MonoBehaviour
             customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
             gobj_Target = gobj_Home;
         }
-      
     }
 
     void GetChicken()
@@ -83,6 +92,7 @@ public class script_Movement : MonoBehaviour
             anim_Condition.SetInteger("int_AnimCondition", -4);
             customType_Sequencer.PushCommand("SEASON MEAT");
             customType_Sequencer.PushCommand("GRILL CHICKEN");
+            gobj_ChickenBubble.SetActive(false);
             customType_Sequencer.ReadyCommand();
             customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
             gobj_Target = gobj_Home;
