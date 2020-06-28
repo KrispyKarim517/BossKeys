@@ -29,7 +29,7 @@ public class script_CommandMatchingScript : MonoBehaviour
 
     [Header("Command Listeners")]
     public CommandEvent event_COOK = new CommandEvent();
-    public CommandEvent event_MOVE = new CommandEvent();
+    public CommandEvent event_GET = new CommandEvent();
     public CommandEvent event_GRILL = new CommandEvent();
     public CommandEvent event_BONUS = new CommandEvent();
 
@@ -38,7 +38,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetNewCommand("MOVE TO STEAK");
+        SetNewCommand("GET CHICKEN");
         wait_IncorrectInputPause = new WaitForSeconds(float_IncorrectInputDelay);
     }
 
@@ -90,9 +90,9 @@ public class script_CommandMatchingScript : MonoBehaviour
         {
             switch (str_temp_final_input.Split()[0])
             {
-                case "MOVE":
-                    Debug.Log("Successful MOVE match");
-                    event_MOVE.Invoke(str_temp_final_input);
+                case "GET":
+                    Debug.Log("Successful GET match");
+                    event_GET.Invoke(str_temp_final_input);
                     break;
                 case "COOK":
                     Debug.Log("Successful COOK match");
