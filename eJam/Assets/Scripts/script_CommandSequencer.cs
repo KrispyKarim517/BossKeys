@@ -68,4 +68,9 @@ public class script_CommandSequencer : MonoBehaviour
         list_OnlyNewJokes.RemoveAt(int_random_index);
         return str_new_joke;
     }
+
+    public void GrabFoodOffGrill()
+    {
+        PushCommand("GRAB FOOD");
+    }
 }

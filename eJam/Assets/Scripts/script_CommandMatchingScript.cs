@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
-
+using System.Runtime.InteropServices;
+using System.Linq;
 
 [System.Serializable]
 public class CommandEvent : UnityEvent<string>
@@ -31,6 +32,8 @@ public class script_CommandMatchingScript : MonoBehaviour
     public CommandEvent event_SEASON = new CommandEvent();
     public CommandEvent event_GET = new CommandEvent();
     public CommandEvent event_GRILL = new CommandEvent();
+    public CommandEvent event_GRAB = new CommandEvent();
+    public CommandEvent event_SERVE = new CommandEvent();
     public CommandEvent event_BONUS = new CommandEvent();
 
     private string str_CommandToMatch;
@@ -104,13 +107,22 @@ public class script_CommandMatchingScript : MonoBehaviour
                     event_GRILL.Invoke(str_temp_final_input);
                     gobj_commandSequencer.ReadyCommand();
                     break;
+                case "GRAB":
+                    Debug.Log("Successful GRAB match");
+                    event_GRAB.Invoke(str_temp_final_input);
+                    gobj_commandSequencer.PushCommand(string.Format("SERVE {0}", str_temp_final_input.Split().Last()));
+                    gobj_commandSequencer.ReadyCommand();
+                    break;
+                case "SERVE":
+                    Debug.Log("Successful SERVE match");
+                    event_SERVE.Invoke(str_temp_final_input);
+                    break;
                 default:
                     Debug.Log("Successful BONUS match");
                     event_BONUS.Invoke(str_temp_final_input);
                     gobj_commandSequencer.ReadyCommand();
                     break;
             }
-            //SetNewCommand(gobj_commandSequencer.GetNextCommand());
         }
         else
         {
@@ -141,12 +153,18 @@ public class script_CommandMatchingScript : MonoBehaviour
 
     private string GenGoodCharacter(char char_next_char)
     {
-        return "<color=green>" + char_next_char + "</color>";
+        if (char_next_char != ' ')
+            return "<color=green>" + char_next_char + "</color>";
+        else
+            return "<color=green>_</color>";
     }
 
     private string GenBadCharacter(char char_next_char)
     {
-        return "<color=red>" + char_next_char + "</color>";
+        if (char_next_char != ' ')
+            return "<color=red>" + char_next_char + "</color>";
+        else
+            return "<color=red>_</color>";
     }
 
     private string ChangeTextColor(string str_old_str, string str_color)
