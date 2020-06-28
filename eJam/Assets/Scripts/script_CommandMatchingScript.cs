@@ -28,7 +28,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     private static WaitForSeconds wait_IncorrectInputPause;
 
     [Header("Command Listeners")]
-    public CommandEvent event_SEASON = new CommandEvent();
+    public CommandEvent event_COOK = new CommandEvent();
     public CommandEvent event_GET = new CommandEvent();
     public CommandEvent event_GRILL = new CommandEvent();
     public CommandEvent event_BONUS = new CommandEvent();
@@ -94,10 +94,9 @@ public class script_CommandMatchingScript : MonoBehaviour
                     Debug.Log("Successful GET match");
                     event_GET.Invoke(str_temp_final_input);
                     break;
-                case "SEASON":
+                case "COOK":
                     Debug.Log("Successful COOK match");
-                    event_SEASON.Invoke(str_temp_final_input);
-                    gobj_commandSequencer.ReadyCommand();
+                    event_COOK.Invoke(str_temp_final_input);
                     break;
                 case "GRILL":
                     Debug.Log("Successful GRILL match");

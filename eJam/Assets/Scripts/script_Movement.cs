@@ -54,7 +54,6 @@ public class script_Movement : MonoBehaviour
         if (this.transform.position.x == 0)
         {
             anim_Condition.SetInteger("int_AnimCondition", -2);
-            customType_Sequencer.PushCommand("SEASON MEAT");
             customType_Sequencer.PushCommand("GRILL STEAK");
             customType_Sequencer.ReadyCommand();
             customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
@@ -81,7 +80,6 @@ public class script_Movement : MonoBehaviour
         if (this.transform.position.y == 0)
         {
             anim_Condition.SetInteger("int_AnimCondition", -4);
-            customType_Sequencer.PushCommand("SEASON MEAT");
             customType_Sequencer.PushCommand("GRILL CHICKEN");
             customType_Sequencer.ReadyCommand();
             customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
@@ -107,7 +105,7 @@ public class script_Movement : MonoBehaviour
         Move();
     }
 
-    public void CorrectGetMatchListener(string str_command)
+    public void CorrectMoveMatchListener(string str_command)
     {
         string str_target = str_command.Split().Last();
         Debug.Log(str_command);
