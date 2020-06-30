@@ -25,6 +25,8 @@ public class script_CommandSequencer : MonoBehaviour
     
     private System.Random random_RandomIndexGenerator = new System.Random();
 
+    private bool bool_ServedSteak = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,9 @@ public class script_CommandSequencer : MonoBehaviour
 
     public void GrabFoodOffGrill()
     {
-        PushCommand("GRAB STEAK");
+        if (!bool_ServedSteak)
+            PushCommand("GRAB STEAK");
+        else
+            PushCommand("GRAB CHICKEN");
     }
 }

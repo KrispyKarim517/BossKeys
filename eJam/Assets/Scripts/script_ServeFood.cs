@@ -5,6 +5,10 @@ using System.Linq;
 
 public class script_ServeFood : MonoBehaviour
 {
+    [Header("Sequencer Object")]
+    public script_CommandSequencer gobj_Sequencer;
+
+    [Header("Food Sprites")]
     public GameObject gobj_CookedSteak;
     public GameObject gobj_BurntSteak;
     public GameObject gobj_CookedChicken;
@@ -48,6 +52,8 @@ public class script_ServeFood : MonoBehaviour
             {
                 EnableCookedSteak();
             }
+            gobj_Sequencer.PushCommand("GET CHICKEN");
+            gobj_Sequencer.ReadyCommand();
         }
         else
         {

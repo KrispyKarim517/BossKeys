@@ -55,7 +55,7 @@ public class script_FoodScript : MonoBehaviour
     {
         if(bool_cooking)
         {
-            Debug.Log(bool_cooking);
+            //Debug.Log(bool_cooking);
             if(!bool_burnt)
             {
                 float_timer += Time.deltaTime;
@@ -123,7 +123,7 @@ public class script_FoodScript : MonoBehaviour
     public void StopCooking(string _)
     {
         m_SpriteRenderer.sprite = null;
-        Debug.Log("Hello There");
+        //Debug.Log("Hello There");
         bool_cooking = false;
     }
 
