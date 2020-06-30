@@ -49,4 +49,9 @@ public class script_MeterManagement : MonoBehaviour
                 float_currentMeter = 1f;
         }
     }
+
+    public float GetMeterValue()
+    {
+        return float_currentMeter;
+    }
 }
