@@ -119,6 +119,7 @@ public class script_CommandMatchingScript : MonoBehaviour
                 case "SERVE":
                     Debug.Log("Successful SERVE match");
                     event_SERVE.Invoke(str_temp_final_input);
+                    Debug.Log(str_temp_final_input);
                     break;
                 default:
                     Debug.Log("Successful BONUS match");

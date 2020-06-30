@@ -38,13 +38,13 @@ public class script_MeterManagement : MonoBehaviour
         string str_command_first_word = bonus.Split()[0];
         if (arr_str_SupportedCommands.Contains(str_command_first_word))
         {
-            float_currentMeter += .15f;
+            float_currentMeter += .075f;
             if (float_currentMeter > 1f)
                 float_currentMeter = 1f;
         }
         else
         {
-            float_currentMeter += .25f;
+            float_currentMeter += .15f;
             if (float_currentMeter > 1f)
                 float_currentMeter = 1f;
         }

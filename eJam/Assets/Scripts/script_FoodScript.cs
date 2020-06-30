@@ -96,6 +96,7 @@ public class script_FoodScript : MonoBehaviour
     */
     public void StartCooking()
     {
+        Start();
         bool_cooking = true;
         Debug.Log("CHICKEEEEEEEEEEEEEEEEEN");
     }
