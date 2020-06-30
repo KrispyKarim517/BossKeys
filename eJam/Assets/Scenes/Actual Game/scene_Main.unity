@@ -531,14 +531,14 @@ RectTransform:
   m_GameObject: {fileID: 232604205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3998172, y: 2.3998172, z: 2.3998172}
+  m_LocalScale: {x: 0.22651751, y: 0.4081526, z: 2.3998172}
   m_Children: []
-  m_Father: {fileID: 1461959968}
+  m_Father: {fileID: 1529165256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 66.999954}
+  m_AnchoredPosition: {x: 0, y: 11.395119}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232604207
@@ -2617,7 +2617,7 @@ RectTransform:
   m_Children:
   - {fileID: 2061356579}
   m_Father: {fileID: 1461959968}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3578,7 +3578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1461959967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +3591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa9031e9c0c8e4b9971cf92e9c23fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gobj_GameOverScreen: {fileID: 1461959966}
   gobj: {fileID: 1529165255}
   text_TextBox: {fileID: 232604207}
   btn_Restart: {fileID: 1120055361}
@@ -3607,7 +3608,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 232604206}
   - {fileID: 1529165256}
   - {fileID: 1120055360}
   - {fileID: 1530147497}
@@ -4158,9 +4158,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.5944, y: 5.879706, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 232604206}
   m_Father: {fileID: 1461959968}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4180,7 +4181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 1}
+  m_Color: {r: 0.24705882, g: 0.7372549, b: 0.85882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4236,7 +4237,7 @@ RectTransform:
   m_Children:
   - {fileID: 1153784454}
   m_Father: {fileID: 1461959968}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

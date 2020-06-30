@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class script_GameOver : MonoBehaviour
 {
+    public GameObject gobj_GameOverScreen;
+
     [Header("UI Elements")]
     public GameObject gobj = null;
     public Text text_TextBox = null;
@@ -28,6 +30,7 @@ public class script_GameOver : MonoBehaviour
 
     public void Display()
     {
+        gobj_GameOverScreen.SetActive(true);
         gobj.SetActive(true);
         text_TextBox.gameObject.SetActive(true);
         btn_Restart.gameObject.SetActive(true);
