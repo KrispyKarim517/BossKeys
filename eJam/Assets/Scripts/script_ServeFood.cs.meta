@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: adf888ea46ac5d145a1b5ffbc5de30d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gobj_CookedSteak: {instanceID: 0}
+  - gobj_BurntSteak: {instanceID: 0}
+  - gobj_CookedChicken: {instanceID: 0}
+  - gobj_BurntChicken: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

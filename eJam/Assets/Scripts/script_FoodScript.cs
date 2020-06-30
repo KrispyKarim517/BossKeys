@@ -55,6 +55,7 @@ public class script_FoodScript : MonoBehaviour
     {
         if(bool_cooking)
         {
+            Debug.Log(bool_cooking);
             if(!bool_burnt)
             {
                 float_timer += Time.deltaTime;
@@ -117,6 +118,13 @@ public class script_FoodScript : MonoBehaviour
         m_SpriteRenderer.sprite = sprite_burnt;
         event_BurntFoodEvent.Invoke();
         Debug.Log("Steak is burnt");
+    }
+
+    public void StopCooking(string _)
+    {
+        m_SpriteRenderer.sprite = null;
+        Debug.Log("Hello There");
+        bool_cooking = false;
     }
 
     public bool isRaw()

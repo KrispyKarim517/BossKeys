@@ -70,6 +70,6 @@ public class script_CommandSequencer : MonoBehaviour
 
     public void GrabFoodOffGrill()
     {
-        PushCommand("GRAB FOOD");
+        PushCommand("GRAB STEAK");
     }
 }
