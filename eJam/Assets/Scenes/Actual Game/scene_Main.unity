@@ -417,8 +417,8 @@ MonoBehaviour:
   gobj_Sequencer: {fileID: 1514056444}
   gobj_CookedSteak: {fileID: 1291605743}
   gobj_BurntSteak: {fileID: 1020350395}
-  gobj_CookedChicken: {fileID: 1222209244}
-  gobj_BurntChicken: {fileID: 118654116}
+  gobj_CookedChicken: {fileID: 118654116}
+  gobj_BurntChicken: {fileID: 1222209244}
   gobj_CookedSteakBubble: {fileID: 364023191}
   gobj_BurntSteakBubble: {fileID: 501259466}
   gobj_CookedChickenBubble: {fileID: 717526133}
