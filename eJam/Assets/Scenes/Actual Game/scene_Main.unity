@@ -2996,9 +2996,9 @@ MonoBehaviour:
     type: 3}
   ref_FoodScript: {fileID: 2089204312}
   float_SteakCookTime: 10
-  float_SteakBurnTime: 5
+  float_SteakBurnTime: 6
   float_ChickenCookTime: 10
-  float_ChickenBurnTime: 5
+  float_ChickenBurnTime: 6
   float_TimeStep: 0.1
 --- !u!1 &1604140190
 GameObject:
