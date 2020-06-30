@@ -20,7 +20,7 @@ public class script_InputText : MonoBehaviour
     private string str_FinalInput = "";
     private float float_TimePassed;
     private bool bool_InputPaused = false;
-
+    private int int_NumberOfBackspaces = 0;
 
     Dictionary<KeyCode, char> dict_Alphabet = new Dictionary<KeyCode, char>()
                                         {
@@ -76,7 +76,7 @@ public class script_InputText : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Backspace))
             {
-                if (str_InputStr.Length != 0)
+                if (str_InputStr.Length != 0 && int_NumberOfBackspaces > 0)
                 {
                     if (float_TimePassed > float_BackspaceCooldown)
                     {
@@ -84,6 +84,7 @@ public class script_InputText : MonoBehaviour
                         str_InputStr = str_InputStr.Remove(str_InputStr.Length - 1);
                         text_InputTextBox.text = str_InputStr;
                         float_TimePassed = 0;
+                        --int_NumberOfBackspaces;
                         event_ValidKeyPressed.Invoke();
                     }
                 }
@@ -98,6 +99,17 @@ public class script_InputText : MonoBehaviour
             }
             float_TimePassed += Time.deltaTime;
         }
+    }
+
+    public void IncrementBackspaces()
+    {
+        ++int_NumberOfBackspaces;
+    }
+
+    public void ClearCurrentInput()
+    {
+        str_InputStr = "";
+        text_InputTextBox.text = "";
     }
 
     public string GetCurrentInput()

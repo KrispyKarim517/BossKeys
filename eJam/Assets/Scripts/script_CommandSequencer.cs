@@ -39,7 +39,6 @@ public class script_CommandSequencer : MonoBehaviour
 
     public string GetNextCommand()
     {
-
         if (queue_Commands.Count != 0)
             return queue_Commands.Dequeue();
         else

@@ -92,7 +92,6 @@ public class script_Movement : MonoBehaviour
             anim_Condition.SetInteger("int_AnimCondition", -4);
             customType_Sequencer.PushCommand("SEASON MEAT");
             customType_Sequencer.PushCommand("GRILL CHICKEN");
-            gobj_ChickenBubble.SetActive(false);
             customType_Sequencer.ReadyCommand();
             customType_Sequencer.PushCommand(customType_Sequencer.GenerateJoke()); //Queues a Joke in advanced
             gobj_Target = gobj_Home;

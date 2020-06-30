@@ -55,6 +55,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     {
         str_CommandToMatch = new_command;
         text_CommandTextBox.text = str_CommandToMatch;
+        gobj_InputText.ClearCurrentInput();
     }
 
     public void ChangeTextColors(string str_current_input)
@@ -66,6 +67,7 @@ public class script_CommandMatchingScript : MonoBehaviour
             if ((int_command_str_index >= str_CommandToMatch.Length) || (str_current_input[i] != str_CommandToMatch[int_command_str_index]))
             {
                 text_CommandTextBox.text += GenBadCharacter(str_current_input[i]);
+                gobj_InputText.IncrementBackspaces();
             }
             else
             {
@@ -153,10 +155,7 @@ public class script_CommandMatchingScript : MonoBehaviour
 
     private string GenGoodCharacter(char char_next_char)
     {
-        if (char_next_char != ' ')
-            return "<color=green>" + char_next_char + "</color>";
-        else
-            return "<color=green>_</color>";
+        return "<color=green>" + char_next_char + "</color>";
     }
 
     private string GenBadCharacter(char char_next_char)
