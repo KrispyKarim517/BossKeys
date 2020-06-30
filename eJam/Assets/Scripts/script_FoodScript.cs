@@ -97,6 +97,7 @@ public class script_FoodScript : MonoBehaviour
     public void StartCooking()
     {
         bool_cooking = true;
+        Debug.Log("CHICKEEEEEEEEEEEEEEEEEN");
     }
 
     private void RawToCooked()

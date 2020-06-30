@@ -21,28 +21,15 @@ public class script_ServeFood : MonoBehaviour
     public GameObject gobj_CookedChickenBubble;
     public GameObject gobj_BurntChickenBubble;
 
-    public void EnableCookedSteak()
-    {
-        gobj_CookedSteak.SetActive(true);
-    }
-
-    public void EnableBurntSteak()
-    {
-        gobj_BurntSteak.SetActive(true);
-    }
-    public void EnableCookedChicken()
-    {
-        gobj_CookedSteak.SetActive(true);
-    }
-
-    public void EnableBurntChicken()
-    {
-        gobj_BurntSteak.SetActive(true);
-    }
 
     public void SwitchToBurnt()
     {
         burntVersion = true;
+    }
+
+    public bool isBurnt()
+    {
+        return burntVersion;
     }
 
     public void ServeFoodListener(string str_CommandText)
@@ -52,11 +39,13 @@ public class script_ServeFood : MonoBehaviour
         {
             if (burntVersion)
             {
-                EnableBurntSteak();
+                gobj_BurntSteak.SetActive(true);
+                gobj_BurntSteakBubble.SetActive(false);
             }
             else
             {
-                EnableCookedSteak();
+                gobj_CookedSteak.SetActive(true);
+                gobj_CookedSteakBubble.SetActive(false);
             }
             gobj_Sequencer.PushCommand("GET CHICKEN");
             gobj_Sequencer.ReadyCommand();
@@ -65,12 +54,15 @@ public class script_ServeFood : MonoBehaviour
         {
             if (burntVersion)
             {
-                EnableBurntChicken();
+                gobj_BurntChicken.SetActive(true);
+                gobj_BurntChickenBubble.SetActive(false);
             }
             else
             {
-                EnableCookedChicken();
+                gobj_CookedChicken.SetActive(true);
+                gobj_CookedChickenBubble.SetActive(false);
             }
+            Time.timeScale = 0;
         }
     }
 }

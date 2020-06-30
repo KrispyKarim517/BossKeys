@@ -9,15 +9,23 @@ public class script_CommandSequencer : MonoBehaviour
     [Header("Matching Object")]
     public script_CommandMatchingScript customType_Matcher = null;
 
+    [Header("Food Object")]
+    public script_ServeFood food = null;
+
+    [Header("Thought Bubbles")]
+    public GameObject gobj_CookedSteakBubble;
+    public GameObject gobj_BurntSteakBubble;
+    public GameObject gobj_CookedChickenBubble;
+    public GameObject gobj_BurntChickenBubble;
 
     private List<string> list_AllJokes = new List<string>()
                                         {
                                             "STEAK PUNS ARE PRETTY RARE",
-                                            //"INSULTING MY NOODLES IS PRETTY LO MEIN",
+                                            "INSULTING MY NOODLES IS PRETTY LO MEIN",
                                             "THE RIGHT SAUCE IS TERIYA KEY", //Does this one make sense?
                                             "I FRIED THIS RICE NOT THE SHRIMP",
                                             "CHICKEN DOESNT NEED SEASONING",
-                                            //"THIS CHICKEN CROSSED THE WRONG ROAD",
+                                            "THIS CHICKEN CROSSED THE WRONG ROAD",
                                         };
     private List<string> list_OnlyNewJokes;
 
@@ -33,16 +41,12 @@ public class script_CommandSequencer : MonoBehaviour
         list_OnlyNewJokes =  list_AllJokes.ToList();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public string GetNextCommand()
     {
         if (queue_Commands.Count != 0)
+        {
             return queue_Commands.Dequeue();
+        }
         else
         {
             return GenerateJoke();
@@ -73,8 +77,38 @@ public class script_CommandSequencer : MonoBehaviour
     public void GrabFoodOffGrill()
     {
         if (!bool_ServedSteak)
-            PushCommand("GRAB STEAK");
+        {
+            if (food.isBurnt())
+            {
+                gobj_BurntSteakBubble.SetActive(true);
+            }
+            else
+            {
+                gobj_CookedSteakBubble.SetActive(true);
+            }
+        }
         else
+        {
+            if (food.isBurnt())
+            {
+                gobj_BurntChickenBubble.SetActive(true);
+            }
+            else
+            {
+                gobj_CookedChickenBubble.SetActive(true);
+            }
+        }
+    }
+
+    public void QueueGrabFoodOffGrill()
+    {
+        if (!bool_ServedSteak)
+        {
+            PushCommand("GRAB STEAK");
+        }
+        else
+        {
             PushCommand("GRAB CHICKEN");
+        }
     }
 }
