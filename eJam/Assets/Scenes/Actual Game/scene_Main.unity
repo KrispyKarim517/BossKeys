@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf888ea46ac5d145a1b5ffbc5de30d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gobj_Sequencer: {fileID: 1514056444}
   gobj_CookedSteak: {fileID: 1291605743}
   gobj_BurntSteak: {fileID: 1020350395}
   gobj_CookedChicken: {fileID: 1222209244}
