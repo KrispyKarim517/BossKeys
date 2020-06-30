@@ -34,6 +34,7 @@ public class script_Movement : MonoBehaviour
         bool_steakComplete = false;
         bool_chickenComplete = false;
         gobj_Target = gobj_Home;
+        Time.timeScale = 1f;
     }
 
     public void DisableSteakBubble(string _)

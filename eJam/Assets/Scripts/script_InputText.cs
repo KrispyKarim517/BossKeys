@@ -9,6 +9,9 @@ public class script_InputText : MonoBehaviour
     [Header("Input Text Box")]
     [SerializeField] private Text text_InputTextBox = null;
 
+    [Header("Pause Menu")]
+    public script_PauseMenu ref_PauseMenu = null;
+
     [Header("Minimum Time between Backspaces (in seconds)")]
     [SerializeField] private float float_BackspaceCooldown = 0.1f; //Game runs to fast to only use GetKey
 
@@ -96,6 +99,10 @@ public class script_InputText : MonoBehaviour
                 event_ReturnKeyPressed.Invoke();
                 str_InputStr = "";
                 text_InputTextBox.text = str_InputStr;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ref_PauseMenu.EscapeKeyPressed();
             }
             float_TimePassed += Time.deltaTime;
         }

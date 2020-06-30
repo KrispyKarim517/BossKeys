@@ -39,8 +39,8 @@ public class script_Cooking : MonoBehaviour
    [Header("Chicken Burn Time")]
    [SerializeField][MinAttribute(0f)] private float float_ChickenBurnTime = 0f;
    
-   [Header("Wait Time")]
-   [SerializeField][MinAttribute(.1f)] private float float_TimeStep = .1f;
+   //[Header("Wait Time")]
+   //[SerializeField][MinAttribute(.1f)] private float float_TimeStep = .1f;
     /*
         Ensure that the following conditions are met:
             - Reference to script_FoodScript is not null
