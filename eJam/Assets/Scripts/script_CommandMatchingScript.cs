@@ -61,6 +61,7 @@ public class script_CommandMatchingScript : MonoBehaviour
     public void ChangeTextColors(string str_current_input)
     {
         text_CommandTextBox.text = "";
+        gobj_InputText.ResetBackspaceCount();
         int int_command_str_index = 0;
         for (int i = 0; i < str_current_input.Length; ++i)
         {

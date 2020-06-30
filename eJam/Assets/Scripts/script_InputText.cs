@@ -101,6 +101,11 @@ public class script_InputText : MonoBehaviour
         }
     }
 
+    public void ResetBackspaceCount()
+    {
+        int_NumberOfBackspaces = 0;
+    }
+
     public void IncrementBackspaces()
     {
         ++int_NumberOfBackspaces;
