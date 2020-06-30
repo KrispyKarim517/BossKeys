@@ -74,6 +74,14 @@ public class script_CommandSequencer : MonoBehaviour
         return str_new_joke;
     }
 
+    public void ServedSomething(string str_command)
+    {
+        if (str_command.Split().Last() == "STEAK")
+        {
+            bool_ServedSteak = true;
+        }
+    }
+
     public void GrabFoodOffGrill()
     {
         if (!bool_ServedSteak)

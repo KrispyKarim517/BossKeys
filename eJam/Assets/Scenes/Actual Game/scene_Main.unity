@@ -359,13 +359,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118654116}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5121386, w: 0.8589029}
   m_LocalPosition: {x: 1, y: -2.25, z: -1.75}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 164724271}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -61.613003}
 --- !u!1 &164724270
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf888ea46ac5d145a1b5ffbc5de30d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gobj_GameOverCanvas: {fileID: 0}
   gobj_Sequencer: {fileID: 1514056444}
   gobj_CookedSteak: {fileID: 1291605743}
   gobj_BurntSteak: {fileID: 1020350395}
@@ -2655,13 +2656,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222209244}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6048643, w: 0.79632854}
   m_LocalPosition: {x: 1, y: -2.25, z: -1.75}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 164724271}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -74.438}
 --- !u!1 &1234998864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,8 +3677,8 @@ MonoBehaviour:
   customType_Matcher: {fileID: 1604140191}
   food: {fileID: 164724272}
   gobj_CookedSteakBubble: {fileID: 364023191}
-  gobj_BurntSteakBubble: {fileID: 717526133}
-  gobj_CookedChickenBubble: {fileID: 501259466}
+  gobj_BurntSteakBubble: {fileID: 501259466}
+  gobj_CookedChickenBubble: {fileID: 717526133}
   gobj_BurntChickenBubble: {fileID: 1471301129}
 --- !u!4 &1514056445
 Transform:
@@ -4205,6 +4206,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 849278551}
         m_MethodName: gain_Meter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1514056444}
+        m_MethodName: ServedSomething
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

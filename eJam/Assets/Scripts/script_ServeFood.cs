@@ -5,8 +5,11 @@ using System.Linq;
 
 public class script_ServeFood : MonoBehaviour
 {
+    [Header("Game Over Display")]
+    public script_GameOver gobj_GameOverCanvas = null; 
+
     [Header("Sequencer Object")]
-    public script_CommandSequencer gobj_Sequencer;
+    public script_CommandSequencer gobj_Sequencer = null;
 
     [Header("Food Sprites")]
     public GameObject gobj_CookedSteak;
@@ -24,6 +27,7 @@ public class script_ServeFood : MonoBehaviour
 
     public void SwitchToBurnt()
     {
+        Debug.Log("a;ojl egshdfrzsad;bcjfvask;fdj ");
         burntVersion = true;
     }
 
@@ -49,6 +53,7 @@ public class script_ServeFood : MonoBehaviour
             }
             gobj_Sequencer.PushCommand("GET CHICKEN");
             gobj_Sequencer.ReadyCommand();
+            burntVersion = false;
         }
         else
         {
@@ -63,6 +68,8 @@ public class script_ServeFood : MonoBehaviour
                 gobj_CookedChickenBubble.SetActive(false);
             }
             Time.timeScale = 0;
+            gobj_GameOverCanvas.CheckWin();
+            gobj_GameOverCanvas.Display();
         }
     }
 }
