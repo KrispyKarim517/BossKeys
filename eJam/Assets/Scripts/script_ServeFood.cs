@@ -15,6 +15,12 @@ public class script_ServeFood : MonoBehaviour
     public GameObject gobj_BurntChicken;
     private bool burntVersion;
 
+    [Header("Thought Bubbles")]
+    public GameObject gobj_CookedSteakBubble;
+    public GameObject gobj_BurntSteakBubble;
+    public GameObject gobj_CookedChickenBubble;
+    public GameObject gobj_BurntChickenBubble;
+
     public void EnableCookedSteak()
     {
         gobj_CookedSteak.SetActive(true);
