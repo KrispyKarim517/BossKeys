@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.0627451, g: 0.0627451, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1359,17 +1359,17 @@ PrefabInstance:
     - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.29675362
+      value: 0.509434
       objectReference: {fileID: 0}
     - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.19530971
+      value: 0.045656808
       objectReference: {fileID: 0}
     - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.7264151
+      value: 0.40674055
       objectReference: {fileID: 0}
     - target: {fileID: 1210076077948989834, guid: 1e9fd85ceb03ab441985c748e5942735,
         type: 3}
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29803923, g: 0.19607843, b: 0.7254902, a: 1}
+  m_Color: {r: 0.12941177, g: 0.121568635, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2495,6 +2495,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_Food: {fileID: 2089204312}
+  gradient_UIBarGradiant:
+    serializedVersion: 2
+    key0: {r: 0.735849, g: 0, b: 0.16096698, a: 1}
+    key1: {r: 0.8784314, g: 0, b: 0.20392157, a: 1}
+    key2: {r: 0.14117648, g: 0.09019608, b: 0.27450982, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 49151
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
 --- !u!114 &849278552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,7 +2537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.95532894, g: 0.9481132, b: 1, a: 1}
+  m_Color: {r: 0.4811321, g: 0.23829655, b: 0.3567529, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3129,7 +3158,7 @@ RectTransform:
   m_GameObject: {fileID: 1120055359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_Children:
   - {fileID: 2061356579}
   m_Father: {fileID: 1461959968}
@@ -3137,7 +3166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.6, y: -43}
+  m_AnchoredPosition: {x: 30, y: -30}
   m_SizeDelta: {x: 150, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120055361
@@ -4314,7 +4343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.07450981, g: 0.03137255, b: 0.21176472, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4826,7 +4855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24705882, g: 0.7372549, b: 0.85882354, a: 1}
+  m_Color: {r: 0.8851373, g: 0.8414472, b: 0.9339623, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4878,7 +4907,7 @@ RectTransform:
   m_GameObject: {fileID: 1530147496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_Children:
   - {fileID: 1153784454}
   m_Father: {fileID: 1461959968}
@@ -4886,7 +4915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.5, y: -121}
+  m_AnchoredPosition: {x: 30, y: -121}
   m_SizeDelta: {x: 150, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530147498
@@ -5595,7 +5624,7 @@ GameObject:
   - component: {fileID: 1703773658}
   - component: {fileID: 1703773657}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: Input Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

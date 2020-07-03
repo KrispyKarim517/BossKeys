@@ -4,6 +4,15 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    ORIGINAL AUTHOR: Unknown
+    EDITED BY: Nichole Wong
+    ---------------------------------------------
+    LAST UPDATED: 7/3 @ 9:25AM (Nichole)
+        - Added feature where the UI bar changes colors 
+        depending on the fill amount
+*/
+
 public class script_MeterManagement : MonoBehaviour
 {
     [Header("Food Objects")]
@@ -18,6 +27,9 @@ public class script_MeterManagement : MonoBehaviour
     //private const float float_PointValue = 0.075f;
     private string[] arr_str_SupportedCommands = { "SEASON", "GET", "GRILL", "GRAB", "SERVE" };
     
+    // Gradiant for the UI bar 
+    [SerializeField] private Gradient gradient_UIBarGradiant = new Gradient();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +47,7 @@ public class script_MeterManagement : MonoBehaviour
             image_meter.fillAmount = float_currentMeter/float_maxMeter;
             float_timer = 0;
         }
+        image_meter.color = gradient_UIBarGradiant.Evaluate(float_currentMeter/float_maxMeter);
     }
 
     public void gain_Meter(string bonus)
